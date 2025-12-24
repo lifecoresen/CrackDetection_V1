@@ -43,51 +43,17 @@ pip install -r requirements.txt
 
 ## 💻 Kullanım
 
-### Tek Resim İşleme
+### Resim İşleme
 ```bash
 python Main.py images/image1.jpeg
 ```
 
-### Tüm Resimleri İşleme
-```bash
-for img in images/*.jpeg; do python Main.py "$img"; done
-```
 
 ### Sonuçlar
 İşlenen resimler `results/` klasörüne `<dosya_adı>_result.jpeg` formatında kaydedilir.
 
-## 📁 Proje Yapısı
-
-```
-LifeCoreSen/
-├── Main.py                 # Ana program
-├── config.py               # Konfigürasyon parametreleri
-├── requirements.txt        # Python bağımlılıkları
-├── images/                 # Giriş resimleri
-├── results/                # Çıkış sonuçları
-└── Opencv/
-    ├── preprocessing.py    # Görüntü ön işleme
-    ├── crack_detection.py  # Çatlak tespiti
-    ├── plaster_detection.py # Dökülen sıva tespiti
-    ├── moisture_detection.py # (plaster_detection wrapper)
-    └── utils.py            # Yardımcı fonksiyonlar
-```
 
 ## ⚙️ Konfigürasyon
 
 `config.py` dosyasından tespit parametrelerini ayarlayabilirsiniz:
 
-- `method`: Tespit yöntemi (`orb`, `adaptive`, `canny`)
-- `min_contour_area`: Minimum çatlak alanı
-- `orb_features`: ORB özellik sayısı
-- `canny_threshold1/2`: Canny kenar eşikleri
-
-## 🛠️ Teknolojiler
-
-- **Python 3.10+**
-- **OpenCV** - Görüntü işleme
-- **NumPy** - Sayısal hesaplamalar
-
-## 📝 Lisans
-
-MIT License
